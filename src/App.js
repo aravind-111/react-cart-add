@@ -34,7 +34,7 @@ function App() {
           {items.map((item, index) => {
             return (
               <Product
-                value={(item, index)}
+                value={item}
                 key={index}
                 parentCallBack={callBackChild}
               />

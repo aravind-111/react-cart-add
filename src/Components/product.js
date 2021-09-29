@@ -16,7 +16,7 @@ function Product(props) {
 
   return (
     <div className="container">
-      <div className="card" key={props.index}>
+      <div className="card">
         <img src={imgsrc} alt="" />
         <h2>{name}</h2>
         <p>
