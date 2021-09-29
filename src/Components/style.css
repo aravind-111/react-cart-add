@@ -1,0 +1,43 @@
+.navContainer {
+  height: 2rem;
+  background: #acd;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+  position: sticky;
+  top: 0;
+}
+
+.card {
+  padding: 5px;
+  width: 300px;
+  background: rgb(177, 230, 219);
+  border-radius: 7px;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  display: inline;
+  cursor: pointer;
+  font-weight: bold;
+  margin-left: 1rem;
+}
+
+.cardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  /* margin-left: auto; */
+  padding: 30px;
+}

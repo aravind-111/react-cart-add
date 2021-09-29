@@ -1,24 +1,42 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
+import Nav from './Components/Nav';
+import Product from './Components/product';
 
 function App() {
+  //
+  const [items] = useState([
+    { name: 'Fancy Pro', price: '$10', addedToCart: false },
+    { name: 'Special Item', price: '$50', addedToCart: false },
+    { name: 'Sale Item', price: '$75', addedToCart: false },
+    { name: 'Popular Product', price: '$100', addedToCart: false },
+  ]);
+
+  const [cartNo, setCartNo] = useState(0);
+
+  const callBackChild = (data, name) => {
+    setCartNo(cartNo + data);
+    console.log(name);
+    items.map((item) => {
+      if (name === item.name) {
+        item.addedToCart = !item.addedToCart;
+      }
+      return item;
+    });
+    console.log(items);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="App">
+        <Nav cartCount={cartNo} />
+        <div className="cardContainer">
+          {items.map((item) => {
+            return <Product value={item} parentCallBack={callBackChild} />;
+          })}
+        </div>
+      </div>
+    </>
   );
 }
 
