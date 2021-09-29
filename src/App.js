@@ -31,8 +31,14 @@ function App() {
       <div className="App">
         <Nav cartCount={cartNo} />
         <div className="cardContainer">
-          {items.map((item) => {
-            return <Product value={item} parentCallBack={callBackChild} />;
+          {items.map((item, index) => {
+            return (
+              <Product
+                value={(item, index)}
+                key={index}
+                parentCallBack={callBackChild}
+              />
+            );
           })}
         </div>
       </div>

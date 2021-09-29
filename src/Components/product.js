@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './style.css';
+import './style.css';
 
 function Product(props) {
   const imgsrc = 'https://via.placeholder.com/300x300';
@@ -16,8 +16,8 @@ function Product(props) {
 
   return (
     <div className="container">
-      <div className="card">
-        <img src={imgsrc} alt="image" />
+      <div className="card" key={props.index}>
+        <img src={imgsrc} alt="" />
         <h2>{name}</h2>
         <p>
           <b>{price}</b>
