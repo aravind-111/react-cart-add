@@ -11,7 +11,7 @@ function Nav({ cartCount }) {
         <li>Shop</li>
       </ul>
       <div className="button div">
-        <strong>Cart</strong>
+        <strong>Cart: </strong>
         <span className="cartNo">{cartCount}</span>
       </div>
     </div>
